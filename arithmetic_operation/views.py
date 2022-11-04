@@ -8,7 +8,7 @@ from .key import get_openai
 # Create your views here.
 
 
-class ArithmeticCreateAPIView(generics.CreateAPIView):
+class ArithmeticCalculatorView(generics.CreateAPIView):
 
     serializer_class = OperandSerializer
 
