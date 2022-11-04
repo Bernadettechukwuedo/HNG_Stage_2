@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-b8wjd5n=g$9j(fn5h6z!37+m9un^ha)6_q-1%*6#5lcm*c1lmp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 # openai
 # OPENAI_API_KEY = "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"
 # openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -44,17 +44,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third party
     'arithmetic_operation',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'Rest_api.urls'
@@ -124,6 +127,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR / "static"
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
