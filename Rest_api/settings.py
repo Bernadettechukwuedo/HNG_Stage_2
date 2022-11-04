@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import openai
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +29,9 @@ SECRET_KEY = 'django-insecure-b8wjd5n=g$9j(fn5h6z!37+m9un^ha)6_q-1%*6#5lcm*c1lmp
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+# openai
+# OPENAI_API_KEY = "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"
+# openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Application definition
 
@@ -37,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #third party
+    # third party
     'arithmetic_operation',
     'rest_framework'
 ]
